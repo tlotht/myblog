@@ -24,12 +24,13 @@ require "selenium-webdriver"
  # end
 
  #动态网页
-    # options = Selenium::WebDriver::Options.chrome(args: ['--headless=new'])
-    # driver = Selenium::WebDriver.for :chrome, options: options
     #火狐
     #driver = Selenium::WebDriver.for :firefox
+    #google 有头浏览器
+    #driver = Selenium::WebDriver.for :chrome
 
-    driver = Selenium::WebDriver.for :chrome
+    options = Selenium::WebDriver::Options.chrome(args: ['--headless=new'])
+    driver = Selenium::WebDriver.for :chrome, options: options
     driver.get('https://quotes.toscrape.com/js/')
 
     quotes = []
