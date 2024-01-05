@@ -1,11 +1,12 @@
-source "https://rubygems.org"
+#source "https://rubygems.org"
+source "http://mirrors.tuna.tsinghua.edu.cn/rubygems"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "2.7.1"
 gem 'nokogiri'
 gem 'httparty'
 gem 'csv'
-gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
+#gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
@@ -30,6 +31,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#自动添加注释
+gem 'annotate'
+#gem 'migration_comments'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -37,7 +42,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
