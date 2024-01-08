@@ -6,6 +6,7 @@ ruby "2.7.1"
 gem 'nokogiri'
 gem 'httparty'
 gem 'csv'
+gem 'ransack'
 #gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
