@@ -1,6 +1,6 @@
 #source "https://rubygems.org"
 source "http://mirrors.tuna.tsinghua.edu.cn/rubygems"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+#git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.1"
 gem 'nokogiri'
@@ -8,6 +8,11 @@ gem 'httparty'
 gem 'csv'
 gem 'ransack'
 
+gem "sassc-rails"
+
+gem "bootstrap", "~> 5.2.3"
+
+gem "jquery-rails"
 #gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
