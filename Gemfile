@@ -8,11 +8,15 @@ gem 'httparty'
 gem 'csv'
 gem 'ransack'
 
+#bootstrap的三个gem
 gem "sassc-rails"
-
 gem "bootstrap", "~> 5.2.3"
-
 gem "jquery-rails"
+
+#simpleform
+gem 'simple_form'
+#gem 'will_paginate-bootstrap',:git => 'https://github.com/iamzhangdabei/will_paginate-bootstrap'
+gem 'will_paginate-bootstrap'
 #gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
