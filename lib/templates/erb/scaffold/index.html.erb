@@ -1,0 +1,43 @@
+<p id="notice"><%%= notice %></p>
+
+<h1><%= plural_table_name.titleize %></h1>
+
+<div class="row" style="padding-top:20px;">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        列表 <%%= link_to '新建', new_<%= singular_table_name %>_path %>
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <% attributes.reject(&:password_digest?).each do |attribute| -%>
+                  <th><%= attribute.human_name %></th>
+                <% end -%>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+                <tr>
+                  <% attributes.reject(&:password_digest?).each do |attribute| -%>
+                    <td><%%= <%= singular_table_name %>.<%= attribute.column_name %> %></td>
+                  <% end -%>
+                  <td><%%= link_to '查看', <%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+                  <td><%%= link_to '编辑', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+                  <td><%%= link_to '删除', <%= singular_table_name %>, method: :delete, data: { confirm: '确定么?' } %></td>
+                </tr>
+              <%% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%%=will_paginate @<%= plural_table_name %>,renderer: BootstrapPagination::Rails%>
