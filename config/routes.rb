@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :testpages
   get 'home/index'
   resources :users
 

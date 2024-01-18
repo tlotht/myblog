@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result()
+    @users = @q.result().paginate(:page=>params[:page],:per_page=>per_page)
   end
 
   # GET /users/1 or /users/1.json
@@ -66,6 +66,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :password_digest)
+      params.require(:user).permit(:name, :password,:password_confirmation)
     end
 end
