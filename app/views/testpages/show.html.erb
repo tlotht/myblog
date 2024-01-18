@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @testpage %>
+<table class="table table-hover">
+  <tr>
+    <td><strong>名称:</strong></td>
+    <td><%= @testpage.name %></td>
+  </tr>
+  <tr>
+    <td><strong>count:</strong></td>
+    <td><%= @testpage.count %></td>
+  </tr>
+  <tr>
+    <td><strong>描述:</strong></td>
+    <td><%= @testpage.description %></td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to "Edit this testpage", edit_testpage_path(@testpage) %> |
+  <%= link_to "Back to testpages", testpages_path %>
+
+  <%= button_to "Destroy this testpage", @testpage, method: :delete %>
+</div>
