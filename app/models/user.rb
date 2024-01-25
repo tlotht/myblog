@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  #password_confirmation
-
-
+  validates :name, presence: true, uniqueness: true
 end
 
 # == Schema Information

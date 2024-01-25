@@ -1,6 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Password :</strong>
+    <%= user.password %>
+  </p>
+
+</div>
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |

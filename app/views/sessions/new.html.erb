@@ -1,0 +1,27 @@
+<h1 class='text-center'>登陆</h1>
+
+<div class="row">
+  <div class="col-md-6 offset-3">
+      <%= form_with(model: @user, url: sessions_path, local: true) do |f| %>
+
+    <!-- Display error message of form -->
+   
+
+    <!-- Field of sessoin form -->
+    <div class='row'>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Please enter name ' %>
+    </div>
+
+    <div class='row'>
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: 'Please enter password' %>
+    </div>
+
+    <div class='row'>
+      <%= f.submit 'Sign In' %>
+    </div>
+  <% end %>
+
+  </div>
+</div>

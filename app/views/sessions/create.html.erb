@@ -1,0 +1,9 @@
+<h1>Sessions#create</h1>
+ <% if f.object.errors.full_messages.any? %>
+      <ul class='error'>
+        <% f.object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+<p>Find me in app/views/sessions/create.html.erb</p>
