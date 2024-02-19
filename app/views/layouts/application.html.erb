@@ -19,17 +19,26 @@
   </head>
 
    <body>
-    <nav class="navbar navbar-default" role="navigation"> 
-      <div class="container-fluid"> 
-           
-          <ul class="nav navbar-nav navbar-right"> 
-            <li><%= link_to "注册","/signin" %></li>
-            <% if user_signed_in? %>
-              <li><%= link_to '退出登陆', logout_path, class: 'logout', method: :delete %></li>
-            <% else %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" > 
+      <div class="container-fluid justify-content-end"> 
+
+        <div class="d-flex bd-highlight">
+          <div class="p-2 bd-highlight">
+            <%= link_to "注册","/signin" %>
+          </div>
+          <% if user_signed_in? %>
+            <div class="p-2 bd-highlight">
+              <%= link_to '用户页面', user_path(current_user) , class: 'show', method: :get%>
+            </div>
+            <div class="p-2 bd-highlight">
+              <%= link_to '退出登陆', logout_path, class: 'logout', method: :delete %>
+            </div>
+          <% else %>
+            <div class="p-2 bd-highlight">
               <li><%= link_to '登录', login_path, class: 'login', method: :post %></li>
-            <% end %>
-          </ul> 
+            </div>
+          <% end %>
+        </div>
       </div> 
     </nav>
     <%= yield %>
