@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :articles do 
+    resources :comments
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :testpages
   get 'home/index'
   resources :users
   root to: 'home#index'
 
-  #get "/articles", to: "articles#index"
   #注册
   get  '/signin', to: 'users#new'
   post '/signin', to: 'users#create'

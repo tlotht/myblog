@@ -24,6 +24,9 @@
 
         <div class="d-flex bd-highlight">
           <div class="p-2 bd-highlight">
+            <p>user sign in <%= user_signed_in? %></p>
+          </div>
+          <div class="p-2 bd-highlight">
             <%= link_to "注册","/signin" %>
           </div>
           <% if user_signed_in? %>
