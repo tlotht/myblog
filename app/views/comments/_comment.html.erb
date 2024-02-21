@@ -1,4 +1,5 @@
 <div id="<%= dom_id comment %>">
+  <% unless comment.archived? %>
   <p>
     <strong>Commenter:</strong>
     <%= comment.commenter %>
@@ -8,10 +9,8 @@
     <strong>Body:</strong>
     <%= comment.body %>
   </p>
-
-  <p>
-    <strong>Article:</strong>
-    <%= comment.article_id %>
-  </p>
+  <%= link_to "Edit this comment", edit_article_comment_path(comment.article,comment ) %>
+   <%= link_to "delete this comment", article_comment_path(comment.article,comment ) , method: :delete%>
+   <% end %>
 
 </div>

@@ -54,7 +54,8 @@ class CommentsController < ApplicationController
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @article = Article.find(params[:article_id])
-    @comment.destroy
+    @comment.status = 'archived'
+    @comment.save
 
     respond_to do |format|
       format.html { redirect_to article_path(@article), notice: "Comment was successfully destroyed." }
@@ -70,6 +71,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:commenter, :body, :article_id)
+      params.require(:comment).permit(:commenter, :body, :article_id,:status)
     end
 end
