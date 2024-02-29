@@ -2,9 +2,9 @@ class Comment < ApplicationRecord
   include Visible
   belongs_to :article
 
-  scope :status_public,->{where(status: 'public')}
-  scope :status_private,->{where(status: 'private')}
-  scope :status_archived,->{where(status: 'archived')}
+  # scope :status_public,->{where(status: 'public')}
+  # scope :status_private,->{where(status: 'private')}
+  # scope :status_archived,->{where(status: 'archived')}
 
 end
 

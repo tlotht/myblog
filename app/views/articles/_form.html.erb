@@ -6,6 +6,11 @@
     <%= f.input :body %>
   </div>
 
+  <div>
+    <%= f.label :status %><br>
+    <%= f.select :status, options_for_select(Visible::VALID_STATUSES.reject{|s| s == 'archived'}), selected: 'public' %>
+  </div>
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
